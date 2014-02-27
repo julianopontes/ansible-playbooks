@@ -1,0 +1,9 @@
+---
+
+- name: copy download jdk7 script
+  copy: src=download-jdk7.sh dest=/tmp mode=0555
+
+- name: download java http://download.oracle.com/otn-pub/java/jdk/7u51-b13/jdk-7u51-linux-i586.rpm
+  command: chdir=/opt /tmp/download-jdk7.sh jdk-7u51-linux-i586.rpm creates=/opt/jdk-7u51-linux-i586.rpm
+  notify:
+  - install jdk7

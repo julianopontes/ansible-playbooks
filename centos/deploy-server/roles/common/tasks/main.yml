@@ -1,0 +1,9 @@
+---
+# Commons
+
+- name: install libselinux-python | wget | git
+  yum: name={{item}} state=present
+  with_items:
+  - libselinux-python
+  - wget
+  - git

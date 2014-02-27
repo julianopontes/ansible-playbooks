@@ -1,0 +1,5 @@
+---
+# Java 7 handlers
+
+- name: install jdk7
+  command: rpm -ivh /opt/jdk-7u51-linux-i586.rpm

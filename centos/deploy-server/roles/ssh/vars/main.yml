@@ -1,0 +1,3 @@
+---
+# Password create with python -c "from passlib.hash import sha512_crypt; print sha512_crypt.encrypt('<password>')"
+password: $6$rounds=100000$5Aak.Sww2ImyeBkt$UO0rK27c.iWU2XfCZKby2ZHTtymQyHqXPyIXzEfo.O5IZQgg8.ur7RqhkOxj8rq7Q1uspn6haLA28wjLIlMf5/

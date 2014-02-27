@@ -1,0 +1,17 @@
+---
+# Task for setup ssh access
+
+- name: create deploy group
+  group: name=deploy state=present
+
+- name: create deploy user
+  user: name=deploy group=deploy password={{password}} state=present
+
+- name: allow deploy user to connect via ssh
+  copy: src=/files/sshd_config dest=/etc/ssh/sshd_config
+  notify:
+  - restart ssh
+
+- name: insert iptables rule for Tomcat
+  lineinfile: dest=/etc/ssh/sshd_config create=yes state=present regexp="#PermitRootLogin yes" insertafter="^:OUTPUT " line="-A INPUT -p tcp --dport {{ http_port }} -j ACCEPT"
+  notify: restart iptables

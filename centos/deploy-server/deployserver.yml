@@ -1,0 +1,14 @@
+---
+# Deploy server
+
+- hosts: server
+  remote_user: root
+  roles:
+  - ssh
+
+- hosts: server
+  sudo: yes
+  roles:
+  - common
+  - java7
+  - maven
