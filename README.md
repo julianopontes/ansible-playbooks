@@ -1,4 +1,4 @@
 ansible-playbooks
 =================
 
-[-] centos - Ansible playbooks for CentOS SO 
+[-] centos - Ansible playbooks for CentOS SO
