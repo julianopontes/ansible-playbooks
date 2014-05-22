@@ -13,5 +13,5 @@
   - restart ssh
 
 - name: insert iptables rule for Tomcat
-  lineinfile: dest=/etc/ssh/sshd_config create=yes state=present regexp="#PermitRootLogin yes" insertafter="^:OUTPUT " line="-A INPUT -p tcp --dport {{ http_port }} -j ACCEPT"
+  lineinfile: dest=/etc/ssh/sshd_config create=yes state=present regexp="PermitRootLogin no" insertafter="^:OUTPUT " line="-A INPUT -p tcp --dport {{ http_port }} -j ACCEPT"
   notify: restart iptables
